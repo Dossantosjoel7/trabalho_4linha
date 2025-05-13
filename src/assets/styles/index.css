@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Audiowide';
+  src: url('Audiowide/audiowide-regular-webfont.woff2') format('woff2'),
+       url('Audiowide/audiowide-regular-webfont.woff') format('woff'),
+       url('Audiowide/Audiowide-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  margin: 0;
+  font-family: 'Audiowide','Lucida Sans';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
