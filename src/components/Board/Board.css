@@ -1,0 +1,55 @@
+/*
+	Nome: Folha de Estilo do Menu do Jogo
+	Copyright: 2024-2025 ©Bernardo_Gonçalo_Joel
+	Data de Criação: 17/05/25 
+	Descrição: Este Documento de estilo é resposanvel por Menu
+
+*/
+
+
+.panel-game{
+    display: flex;
+    margin: 90px 50px;
+    width: 902px;
+    height: 570px;
+    background-color: #dcf2f8;
+    flex-direction: column;
+}
+
+.panel-game .table-game{
+    margin: 8em auto 2em;
+    border-radius: 12px;
+    width: 452px;
+    height: 342.5px;
+    background-image: url("../../../public/laminate_floor_02_diff_4k.jpg");
+    background-position: 10px;
+}
+
+.panel-game .table-game .column-container{
+    display: flex;
+
+
+}
+
+.panel-game .table-game .column-container .column{
+    display: flex;
+    width: 62px;
+    height: 318px;
+}
+
+.panel-game .table-game .column-container .line-container{
+    padding: 2px;
+    margin: 10px;
+
+}
+
+.panel-game .table-game .column-container .line-container .line{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    margin-bottom: 5px;
+
+}

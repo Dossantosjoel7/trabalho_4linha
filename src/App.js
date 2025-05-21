@@ -1,9 +1,12 @@
-import './App.css';
+import React from 'react';
+import { EndGame, Menu} from './components/index';
+
 
 function App() {
   return (
     <>
-      <p>Game em Desenvolvimento ...</p>
+     <Menu></Menu>
+     <EndGame></EndGame>
     </>
   );
 }

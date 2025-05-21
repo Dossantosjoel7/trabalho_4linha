@@ -1,0 +1,5 @@
+export{ default as Menu} from "./Menu/Menu"
+export{ default as Board} from "./Board/Board"
+export{ default as EndGame} from "./EndGame/EndGame"
+export{ default as JogadorActual} from "./JogadorActual/JogadorActual"
+export{ default as Cell} from "./Cell/Cell"
