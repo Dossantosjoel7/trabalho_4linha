@@ -7,9 +7,24 @@
   font-style: normal;
 }
 
+
+:root{
+  --ColorPrincipal: #AF5;
+  --ColorMenu: #34495f;
+  --ColorHeader: #5a6775;
+  --ColorTextMenu: #fff;
+  --ColorJogador1: #793eb4;
+  --ColorJogador2: #f72e2e;
+  --ColorEspecial: #ffd700;
+}
+
+
 body{
   margin: 0;
-  font-family: 'Audiowide','Lucida Sans';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--ColorPrincipal);
+  background: radial-gradient(circle, rgb(209, 248, 169) 33%, rgba(132, 217, 76, 1) 100%);
+  font-family: "Audiowide", sans-serif;
+  font-style: normal;
 }

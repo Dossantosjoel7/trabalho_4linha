@@ -1,0 +1,43 @@
+.panel-game .status{
+    display: flex;
+    padding: 10px 10px;
+    height: 45px;
+    background-color: var(--ColorMenu);
+    justify-content: space-between;
+}
+
+.panel-game .status .status-color{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+
+}
+
+.panel-game .status .status-color span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    border-color: var(--ColorMenu) ;
+    border-style: solid;
+    border-radius: 50%;
+    background-color: var(--ColorMenu);
+    margin-right: 10px;
+}
+
+.panel-game .status button{
+    font-size: 12pt;
+}
+
+.line.especial {
+    border: 3px dashed var(--ColorEspecial) !important;
+}
+
+.line.cor1 {
+    background-color: var(--ColorJogador1) !important;
+}
+
+.line.cor2 {
+    background-color: var(--ColorJogador2) !important;
+}
+

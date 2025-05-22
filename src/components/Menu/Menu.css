@@ -1,0 +1,70 @@
+/*
+	Nome: Folha de Estilo do Menu do Jogo
+	Copyright: 2024-2025 ©Bernardo_Gonçalo_Joel
+	Data de Criação: 17/05/25 
+	Descrição: Este Documento de estilo é resposanvel por Menu
+
+*/
+
+
+
+#container{
+    display: flex;
+    margin: 6em auto 2em;
+    width: 1240px;
+    height: 750px;
+    border-radius: 20px;
+    background-color: white;
+    flex-direction: row;
+}
+
+
+#menu{
+    display: flex;
+    border-radius: inherit;
+    width: 350px;
+    height: auto;
+    background-color: var(--ColorMenu);
+    flex-direction:column ;
+    justify-content: flex-start;
+    position: relative;
+    left: -12px;
+}
+
+#menu header{
+    height: 100px;
+    padding: 3px 10px;
+    font-size: 10pt;
+    text-align: center;
+    background-color: var(--ColorHeader);
+    color: var(--ColorTextMenu);
+}
+
+#menu header h2{
+    padding: 0px;
+    margin: 0px;
+}
+
+#menu main{
+    padding: 20px 20px;
+    
+}
+
+#textmode{
+    color: var(--ColorTextMenu);
+}
+
+#menu footer {
+    position: absolute;
+    text-align: center;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    padding:10px 10px;
+    color: var(--ColorTextMenu);
+    font-size: 10.5pt;
+    background-color: var(--ColorHeader);
+    top: 710px;
+}
+
