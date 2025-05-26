@@ -75,7 +75,7 @@ const Menu = () => {
                 {!gameStarted ? (
                    <></>
                 ) : (
-                    <Board Jogador1={Jogador1} Jogador2={Jogador2} mode={mode} setGameStarted/>
+                    <Board Jogador1={Jogador1} Jogador2={Jogador2} mode={mode}/>
                 )}
             </div>
         </div>

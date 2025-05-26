@@ -9,7 +9,7 @@ const JogadorActual = ({jogador,color,onRestart,tempoRestante}) => {
             <div className="status-color">
                 <span style={{backgroundColor:color, borderColor:color}}></span>
                 <p>É a sua vez {jogador}</p>
-                <strong> ⏱️ Tempo restante: {tempoRestante}s</strong>
+                <strong>  ⏱️ {tempoRestante}s</strong>
             </div>
             <button type="button" className="btn btn-danger btn-sm" onClick={onRestart} >Reiniciar</button>
         </div>
