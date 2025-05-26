@@ -71,11 +71,11 @@ const Menu = () => {
                 </main>
                 <footer>2024-2025 ©Bernardo-Gonçalo-Joel</footer>
             </div>
-            <div class="panel-game">
+            <div className="panel-game">
                 {!gameStarted ? (
                    <></>
                 ) : (
-                    <Board Jogador1={Jogador1} Jogador2={Jogador2} mode={mode}/>
+                    <Board Jogador1={Jogador1} Jogador2={Jogador2} mode={mode} setGameStarted/>
                 )}
             </div>
         </div>

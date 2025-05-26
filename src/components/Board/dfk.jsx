@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../Board/Board.css"
 import {generateSpecialCells , checkWin,computerMove} from "../../helpers/index"
 import {JogadorActual, Cell,EndGame} from "../../components/index"
@@ -49,63 +49,7 @@ const Board = ({Jogador1,Jogador2,mode}) => {
             });
         }, 1000);
         return () => clearInterval(timerRef.current);
-    }, [currentCorJogador, Jogadores.jogador1.color, Jogadores]);
-
-    const handleColumnClick = useCallback(
-        (col) => {
-            let row;
-            const newBoard = [...board];
-            if (newBoard[0][col] !== null) {
-                return;
-            }
-            for (row = 5; row >= 0; row--) {
-                if (!newBoard[row][col]) {
-                    newBoard[row][col] = currentCorJogador;
-                    setBoard(newBoard);
-                    const cellKey = `${row}-${col}`;
-                    const winningPlayer = checkWin(newBoard);
-                    if (winningPlayer) {
-                        setWinner(
-                            winningPlayer === Jogadores.jogador1.color
-                                ? Jogadores.jogador1.name
-                                : Jogadores.jogador2.name
-                        );
-                        setIsDraw(false);
-                        clearInterval(timerRef.current);
-                        return;
-                    }
-                    if (newBoard.every(row => row.every(cell => cell !== null))) {
-                        setWinner(null);
-                        setIsDraw(true);
-                        clearInterval(timerRef.current);
-                        return;
-                    }
-                    if (specialCells.includes(cellKey)) {
-                        alert("Célula especial! Joga outra vez!");
-                    } else {
-                        setCurrentCorJogador(
-                            currentCorJogador === Jogadores.jogador1.color
-                                ? Jogadores.jogador2.color
-                                : Jogadores.jogador1.color
-                        );
-                        setTempoRestante(10);
-                    }
-                    break;
-                }
-            }
-        },
-        [
-            board,
-            currentCorJogador,
-            Jogadores,
-            specialCells,
-            setBoard,
-            setWinner,
-            setIsDraw,
-            setCurrentCorJogador,
-            setTempoRestante,
-        ]
-    );
+    }, [currentCorJogador, Jogadores.jogador1.color, Jogadores.jogador2.color]);
 
         useEffect(() => {
             if (
@@ -122,8 +66,46 @@ const Board = ({Jogador1,Jogador2,mode}) => {
                 }, 600); // Atraso de 500ms para simular "pensamento"
                 return () => clearTimeout(timeoutId);
             }
-        }, [currentCorJogador, mode, winner, isDraw, board,Jogadores,handleColumnClick]);
+        }, [currentCorJogador, mode, winner, isDraw, board,Jogadores]);
 
+    const handleColumnClick = (col) => {
+            let row;
+            const newBoard = [...board];
+            if (newBoard[0][col] !== null) {
+                return;
+            }
+            for (row = 5; row >= 0; row--) {
+                if (!newBoard[row][col]) {
+                    newBoard[row][col] = currentCorJogador;
+                    setBoard(newBoard);
+                    const cellKey = `${row}-${col}`;
+                    const winningPlayer = checkWin(newBoard);
+                    if (winningPlayer) {
+                        setWinner(winningPlayer === Jogadores.jogador1.color ? Jogadores.jogador1.name : Jogadores.jogador2.name);
+                        setIsDraw(false); // Garante que não é empate
+                        clearInterval(timerRef.current);
+                        return;
+                    }
+                    if (newBoard.every(row => row.every(cell => cell !== null))) {
+                        setWinner(null);
+                        setIsDraw(true); // Marca como empate
+                        clearInterval(timerRef.current);
+                        return;
+                    }
+                    if (specialCells.includes(cellKey)) {
+                        alert("Célula especial! Joga outra vez!");
+                    } else {
+                        setCurrentCorJogador(
+                            currentCorJogador === Jogadores.jogador1.color
+                                ? Jogadores.jogador2.color
+                                : Jogadores.jogador1.color
+                        );
+                        setTempoRestante(10);
+                    }
+                    break;
+                }
+            }
+        };
 
      const handleRestartGame = () => {
         const emptyBoard = Array(6).fill().map(() => Array(7).fill(null));
@@ -136,17 +118,8 @@ const Board = ({Jogador1,Jogador2,mode}) => {
             ? Jogadores.jogador1.color
             : Jogadores.jogador2.color;
     
-        
+        setCurrentCorJogador(newStartingPlayerColor);
         setTempoRestante(10);
-        clearInterval(timerRef.current);
-        setCurrentCorJogador(newStartingPlayerColor);
-
-        if (winner !== null || isDraw === true) {
-            setSpecialCells(generateSpecialCells());
-
-        }
-        
-        setCurrentCorJogador(newStartingPlayerColor);
     };
 
 

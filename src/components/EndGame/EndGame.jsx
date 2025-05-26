@@ -1,22 +1,44 @@
 import React from 'react';
 
-const EndGame = ({ winner, resetGame }) => {
-    return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <div className="bg-gray-800 p-6 rounded-2xl shadow-lg text-center w-full max-w-md">
-                <h1 className="text-4xl font-bold mb-4">
-                    {winner ? `${winner} Venceu! 🎉` : 'Empate! 🤝'}
-                </h1>
-                <p className="text-lg mb-6">Obrigado por jogar!</p>
-                <button
-                    onClick={resetGame}
-                    className="w-full py-2 text-lg rounded-xl bg-blue-500 hover:bg-blue-600 transition-all"
-                >
-                    Jogar Novamente
-                </button>
-            </div>
-        </div>
-    );
+const EndGame = ({ winner,isDraw, onRestart }) => {
+  return (
+    <div
+      className="endgame-screen"
+      style={{
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        color: 'white',
+        position: 'absolute',
+        top: 186,
+        left: 706,
+        width: '820px',
+        height: '570px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 10,
+      }}
+    >
+      <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+        {isDraw ? '🤝 Empate!' : `🎉 ${winner} venceu o jogo!`}
+      </h1>
+
+      <button
+        onClick={onRestart}
+        style={{
+          padding: '0.8rem 1.5rem',
+          fontSize: '1.2rem',
+          borderRadius: '12px',
+          backgroundColor: '#28a745',
+          color: 'white',
+          border: 'none',
+          cursor: 'pointer',
+        }}
+      >
+        Jogar Novamente
+      </button>
+    </div>
+  );
 };
 
 export default EndGame;
