@@ -20,6 +20,7 @@ const Board = ({Jogador1,Jogador2,mode}) => {
     const [tempoRestante, setTempoRestante] = useState(10);
     const timerRef = useRef(null);
     const [winner, setWinner] = useState(null);
+    const [ColunaFlutuada, setColunaFlutuada] = useState(null);
     const [isDraw, setIsDraw] = useState(false); // Novo estado para empate
 
     useEffect(() => {
@@ -166,7 +167,14 @@ const Board = ({Jogador1,Jogador2,mode}) => {
             <div className="table-game">
                 <div className="column-container">
                         {Array.from({ length: 7 }).map((_, col) => (
-                            <div key={col} className="column">
+                            <div key={col} className={`column`} onMouseOver={() => setColunaFlutuada(col)} onMouseOut={() => setColunaFlutuada(null)}>
+                                {ColunaFlutuada === col && (
+                                    <div className="hover-indicator">
+                                        <div
+                                            className={`indicator-piece ${currentCorJogador}`}
+                                        ></div>
+                                    </div>
+                                )}
                                 <div className="line-container">
                                     {Array.from({ length: 6 }).map((_, row) => (
                                         <Cell key={`${row}-${col}`}

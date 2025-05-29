@@ -34,11 +34,30 @@
     border: 3px dashed gold !important;
 }
 
-.line.roxo {
+.roxo {
     background-color: var(--ColorJogador1) !important;
 }
 
-.line.vermelho {
+.vermelho {
     background-color: var(--ColorJogador2) !important;
+}
+
+
+/* Indicador no topo da coluna */
+.hover-indicator {
+    position: absolute;
+    top: -40px; /* Posiciona acima do tabuleiro */
+    left: 60%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicator-piece {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: currentColor;
 }
 
