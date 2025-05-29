@@ -1,5 +1,5 @@
 import React from 'react';
-import { EndGame, Menu} from './components/index';
+import {Menu} from './components/index';
 
 
 function App() {

@@ -1,3 +1,4 @@
-//export { default as generateSpecialCells } from "./generateSpecialCells";
 export { default as checkWinner} from "./winCheck";
-//export { default as computerMove} from "./computerMove"
+export { default as GenerarCelulasEspeciais} from "./GenerarCelulasEspeciais";
+export { default as formatTime} from "./FormatTime";
+export { default as computerMove} from "./computerMove";

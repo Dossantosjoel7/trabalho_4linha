@@ -29,15 +29,21 @@
     font-size: 12pt;
 }
 
-.line.especial {
+.status .status-color strong{
+    position: absolute;
+    left: 55%;
+
+}
+
+.line.especial{
     border: 3px dashed var(--ColorEspecial) !important;
 }
 
-.line.cor1 {
+.cor1 {
     background-color: var(--ColorJogador1) !important;
 }
 
-.line.cor2 {
+.cor2 {
     background-color: var(--ColorJogador2) !important;
 }
 

@@ -35,6 +35,8 @@
     display: flex;
     width: 62px;
     height: 318px;
+    position: relative;
+    transition: border 0.2s ease-in-out;
 }
 
 .panel-game .table-game .column-container .line-container{
@@ -53,4 +55,22 @@
     cursor: pointer;
     margin-bottom: 5px;
 
+}
+
+/* Indicador no topo da coluna */
+.hover-indicator {
+    position: absolute;
+    top: -50px; /* Posiciona acima do tabuleiro */
+    left: 60%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicator-piece {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: currentColor;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EndGame = ({ winner,isDraw, onRestart }) => {
+const EndGame = ({ winner, onRestart }) => {
   return (
     <div
       className="endgame-screen"
