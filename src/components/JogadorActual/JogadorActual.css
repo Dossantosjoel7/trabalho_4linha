@@ -30,6 +30,7 @@
 }
 
 .status .status-color strong{
+    display: flex;
     position: absolute;
     left: 55%;
 
