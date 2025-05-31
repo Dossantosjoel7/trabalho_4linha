@@ -28,10 +28,17 @@ const Menu = () => {
 
         setGameStarted(true);
     };
+    
+    const ResetarGame = () => {
+        setJogador1("");
+        setJogador2("");
+        setMode('0');
+        setGameStarted(false);
+    }
 
     return(
-        <div id="container">
-            <div id="menu">
+        <div className="container">
+            <div className="menu">
                 <header>
                     <h1>4Linha</h1>
                     <h2>Trabalho Ls</h2>
@@ -66,7 +73,8 @@ const Menu = () => {
                                 </div>
                             ))
                         }
-                            <button type="button" className="btn btn-success w-100" disabled = {gameStarted} onClick={handleStartGame}>Iniciar Jogo</button>                   
+                            <button type="button" className="btn btn-success w-100" disabled = {gameStarted} onClick={handleStartGame}>Iniciar Jogo</button>   
+                            {gameStarted? (<button type="button" id="Buttom-Resetar" onClick={ResetarGame} className="btn btn-light btn-sm" >Recetar o Jogo</button>) : <></>}  
                     </fieldset>
                 </main>
                 <footer>2024-2025 ©Bernardo-Gonçalo-Joel</footer>

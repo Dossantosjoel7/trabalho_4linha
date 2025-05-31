@@ -12,7 +12,7 @@ const JogadorActual = ({jogador,color,onRestart,tempoRestante}) => {
                 <p>É a sua vez {jogador}</p>
                 <strong>⏱️{formatTime(tempoRestante)}s</strong>
             </div>
-            <button type="button" className="btn btn-danger btn-sm" onClick={onRestart} >Reiniciar</button>
+            <button type="button" className="btn btn-danger btn-sm" onClick={onRestart} >Reiniciar Jogada</button>
         </div>
     );
 };
